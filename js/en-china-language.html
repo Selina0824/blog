@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../vendors/css/base.css" rel="stylesheet">
+<link href="../vendors/css/index.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="../vendors/js/modernizr.js"></script>
+<![endif]-->
+<script src="../vendors/js/scrollReveal.js"></script>
+<body style="background:url(../vendors/images/articlebg.png) repeat;">
+<div class="detail">
+    <h2>html页面中英文切换</h2>
+    <p style="float: right">2018-02-27</p>
+    <br/>
+   <div>
+       <p>
+           如何实现html页面的双语切换呢？最粗暴的办法是做两个页面，一个中文的，一个英文的。稍微温和的方法是：在每次显示之前，对当前的语言标志进行判断，用if和else来解决，其实，这种办法虽然没有那么粗暴，但也够恶心的了。还是用其他办法吧，废话少说，直接上代码。
+
+           为了简便起见，我用lang_flag来作为切换标志，那么代码如下;
+       </p>
+       <div>
+           <p>test.html文件</p>
+           <xmp>
+               <html>
+               <head>
+                   <script type="text/javascript" src="language.js"></script>
+                   <script type="text/javascript" src="test.js"></script>
+
+                   <script>
+				       var lang_flag = 1;
+                   </script>
+               </head>
+
+               <body>
+               <script>
+			       document.write(love[lang_flag]);
+			       fun();
+               </script>
+               </body>
+               </html>
+           </xmp>
+       </div>
+
+       <div>
+           <p>test.js</p>
+           <xmp>
+               var lang_flag = 1;
+               function fun()
+               {
+               document.write(like[lang_flag]);
+               }
+           </xmp>
+       </div>
+
+       <div>
+           <p>language.js</p>
+           <xmp>
+               var love = ['Wo ai ni.', 'I love you!'];
+               var like = ['Wo xi huan ni.', 'I like you!'];
+           </xmp>
+       </div>
+   </div>
+    <a href="en-china-language/test.html" target="_blank" class="link2">演示案例</a>
+</div>
+</body>
+</html>

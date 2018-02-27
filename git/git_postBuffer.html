@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../vendors/css/base.css" rel="stylesheet">
+<link href="../vendors/css/index.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="../vendors/js/modernizr.js"></script>
+<![endif]-->
+<script src="../vendors/js/scrollReveal.js"></script>
+<body style="background:url(../vendors/images/articlebg.png) repeat;">
+<div class="detail">
+    <h2>使用git所遇到的常见问题</h2>
+    <p style="float: right">2018-02-26</p>
+    <br/>
+    <div>
+        <h3>1. git下载内容过大——增大git postBuffer</h3>
+        <div>
+            <h4>报错</h4>
+            <p>RPC failed; result=18, HTTP code = 200</p>
+        </div>
+        <div>
+            <h4>解决方法</h4>
+            <div>
+                <p>使用命令行<span>"git config http.postBuffer 24288000"</span></p>
+                <p>查看git postBuffer,使用命令： </p>
+                <p>"git config --get http.postBuffer"</p>
+                <p>其他可用命令</p>
+                <p>git config --global http.postBuffer 524288000</p>
+                <p>git config --list</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
