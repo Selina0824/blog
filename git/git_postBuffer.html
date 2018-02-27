@@ -16,7 +16,14 @@
         <h3>1. git下载内容过大——增大git postBuffer</h3>
         <div>
             <h4>报错</h4>
-            <p>RPC failed; result=18, HTTP code = 200</p>
+            <p>git clone https://github.com/cocos2d/cocos2d-x.git<br/>
+                Cloning into 'cocos2d-x'...<br/>
+                remote: Counting objects: 397914, done.<br/>
+                remote: Compressing objects: 100% (19/19), done.<br/>
+                error: RPC failed; result=56, HTTP code = 200 MiB | 0 bytes/s<br/>
+                fatal: The remote end hung up unexpectedly<br/>
+                fatal: early EOF<br/>
+                fatal: index-pack failed</p>
         </div>
         <div>
             <h4>解决方法</h4>
