@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../vendors/css/base.css" rel="stylesheet">
+<link href="../vendors/css/index.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="../vendors/js/modernizr.js"></script>
+<![endif]-->
+<script src="../vendors/js/scrollReveal.js"></script>
+<body style="background:url(../vendors/images/articlebg.png) repeat;">
+    <div class="detail">
+        <h2>1.indexOf</h2>
+        <xmp>
+                var s = 'hello, world';
+                s.indexOf('world'); // 返回7
+                s.indexOf('World'); // 没有找到指定的子串，返回-1
+        </xmp>
+        <p>indexOf()会搜索指定字符串出现的位置，同时用于判断某个字符串是否存在</p>
+    </div>
+
+    <div class="detail">
+        <h2>2. 获取当前页面的域名和路径</h2>
+        <xmp>
+                    var {hostname:domain, pathname:path} = location;
+        </xmp>
+        <p>解构赋值</p>
+    </div>
+
+    <div class="detail">
+            <h2>3. parseInt和Number</h2>
+            <xmp>
+                    'use strict';
+
+                    var arr = ['1', '2', '3'];
+                    var r;
+                    r = arr.map(parseInt);
+                    console.log(r);   // 1,NAN, NAN
+            </xmp>
+
+            <xmp>
+                    'use strict';
+
+                    var arr = ['1', '2', '3'];
+                    var r;
+                    r = arr.map(Number);
+                    console.log(r);   // 1,2,3
+            </xmp>
+            <p>由于map()接收的回调函数可以有3个参数：callback(currentValue, index, array)，通常我们仅需要第一个参数，而忽略了传入的后面两个参数。不幸的是，parseInt(string, radix)没有忽略第二个参数，导致实际执行的函数分别是：
+
+                   <br/> parseInt('0', 0); // 0, 按十进制转换
+                    
+                   <br/>parseInt('1', 1); // NaN, 没有一进制
+                    
+                   <br/>parseInt('2', 2); // NaN, 按二进制转换不允许出现2
+                    
+                   <br/>可以改为r = arr.map(Number);，因为Number(value)函数仅接收一个参数</p>
+        </div>
+</body>
+</html>
