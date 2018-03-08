@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../vendors/css/base.css" rel="stylesheet">
+<link href="../vendors/css/index.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="../vendors/js/modernizr.js"></script>
+<![endif]-->
+<script src="../vendors/js/scrollReveal.js"></script>
+<style>
+    .container {
+        width: 320px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #FFFFFF;
+        padding: 20px;
+    }
+    #nav {
+        list-style: none;
+        font-size: 22px;
+        line-height: 40px;
+    }
+    #imgnav {
+        margin: 20 200 20;
+    }
+    #nav li {
+        margin-right: 5px;
+        float: left;
+        width: 100px;
+    }
+    #imgnav li {
+        margin-right: 5px;
+        float: left;
+        width: 200px;
+    }
+    .home {
+        border-top: 4px solid #7BC110; background:#be6;
+    }
+    .activity {
+        border-top: 4px solid #ff9900; background:#fc3;
+    }
+    .personel {
+        border-top: 4px solid #ff66ff; background:#fcf;
+    }
+</style>
+<body style="background:url(../vendors/images/articlebg.png) repeat;">
+    <div class="detail">
+        <h2>1.页面水平导航</h2>
+        <div class = 'container'>
+            <ul id='nav'>
+                <li class = 'home'>班级首页</li>
+                <li class="activity">班级日志</li>
+                <li class="personel">个人风采</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="detail">
+        <h2>2. 多媒体文件-embed</h2>
+        <embed src= "./images/music.mp3" width="160px" height="100px" CONTROLS="smallconsole"/>
+    </div>
+
+    <div class="detail">
+        <h2>3. 文字滚动-marguee</h2>
+        <div >
+                <ul id='imgnav'>
+                    <li>
+                            <marquee behavior = "scroll" direction = "left" height = "120"
+                            onmouseover="this.stop()" onmouseout="this.start()"
+                            scrollAmount = 4 width="1500">
+                            <a href="./images/1.jpg">
+                                <img src = "./images/1.jpg" width="150px" height="120" border = "0">
+                            </a>
+                            <a href="./images/2.jpg">
+                                <img src = "./images/2.jpg" width="150px" height="120" border = "0">
+                            </a>
+                            <a href="./images/3.jpg">
+                                <img src = "./images/3.jpg" width="150px" height="120" border = "0">
+                            </a>
+                            </marquee>
+                    </li>
+                    <li ><marquee behavior = "scroll" direction = "left" height = "120" 
+                        onmouseover="this.stop()" onmouseout="this.start()" 
+                        scrollAmount = 4 width="1500">
+                
+                        <a href="./images/2.jpg">
+                            <img src = "./images/2.jpg" width="150px" height="120" border = "0">
+                        </a>
+                        <a href="./images/3.jpg">
+                            <img src = "./images/3.jpg" width="150px" height="120" border = "0">
+                        </a>
+                        </marquee>
+                    </li>
+
+                    <li ><marquee behavior = "scroll" direction = "left" height = "120" 
+                        onmouseover="this.stop()" onmouseout="this.start()" 
+                        scrollAmount = 4 width="1500">
+                
+                        <a href="./images/3.jpg">
+                            <img src = "./images/3.jpg" width="150px" height="120" border = "0">
+                        </a>
+                        </marquee>
+                    </li>
+                </ul>
+            </div>
+
+                
+                
+    </div>
+</body>
+</html>

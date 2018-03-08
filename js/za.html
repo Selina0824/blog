@@ -55,5 +55,26 @@
                     
                    <br/>可以改为r = arr.map(Number);，因为Number(value)函数仅接收一个参数</p>
         </div>
+
+        <div class="detail">
+                <h2>4. 利用filter()筛选素数</h2>
+                <xmp>
+                        'use strict';
+
+                        function get_primes(arr) {
+                            return arr.filter(function (n) {
+                                if (n === 1) {
+                                    return false;
+                                }
+                                for(let i=2; i<n/2+1; i++) {
+                                    if (n%i === 0) {
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            });
+                        }
+                </xmp>
+            </div>
 </body>
 </html>
