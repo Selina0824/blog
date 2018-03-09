@@ -1,0 +1,95 @@
+<html>
+    <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>示例1</title>
+            <style>
+                table{
+                    margin: 20px auto;
+                }
+                #loginArea{
+                    width: 280px;
+                    font-size: 12px;
+                    margin: 20px auto;
+                }
+                #loginArea p {
+                    margin: 0 0 3px;
+                    width: 100%;
+                }
+                label{
+                    background-color: #ccc;display: block;
+                    text-align: left;
+                    margin-right: 2px;
+                    padding: 2px 0;
+                    width: 100px;
+                    float: left;
+                }
+                input{
+                    width: 150px;
+                    float: left;
+                    display: block;
+                    margin: 2px;
+                }
+                input.button{
+                    width: 60px;
+                    margin-right: 5px;
+                }
+                fieldset{
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    background-color: bisque;
+                    padding: 10px;
+                }
+                legend{
+                    font-weight: bold;
+                    margin-bottom: 12px;
+                }
+            </style>
+
+    </head>
+    <body>
+        <form id="loginForm" name="loginForm" onsubmit = "return validForm();">
+            <div id="loginArea">
+                <fieldset>
+                    <legend>用户注册</legend>
+                    <p>
+                        <label>登录用户名</label>
+                        <input id="username" name="username" type="text" tabindex="1">
+                    </p>
+
+                    <p>
+                        <label>登录密码</label>
+                        <input id="pwd" name="pwd" type="password" tabindex="2">
+                    </p>
+                    <p>
+                        <label>重复输入密码</label>
+                        <input id="repwd" name="repwd" type="password" tabindex="3">
+                    </p>
+                    
+                    <p>
+                        <label>有效邮箱地址</label>
+                        <input id="email" name="email" type="text" tabindex="4">
+                    </p>
+                    <p>
+                            <input type="submit" id="btlogin" class="button" value="提交">
+                            <input type="submit" id="btreset" class="button" value="取消">
+                    </p>
+                </fieldset>
+            </div>
+        </form>
+    </body>
+    <script src="validate.js"></script>
+    <script>
+        function validForm() {
+            var username = document.getElementById('username');
+            var pwd = document.getElementById('pwd');
+            var repwd = document.getElementById('repwd');
+            var email = document.getElementById('email');
+
+            if(!validate_required(username)){
+                alert('请输入用户名');
+                return false;
+            }
+        }
+    </script>
+</html>
