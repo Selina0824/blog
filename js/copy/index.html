@@ -1,0 +1,79 @@
+<html>
+    <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>示例1</title>
+            <style>
+                #mainArea{
+                    width: 286px;
+                     margin: 20px auto;
+                }
+                #mainArea select{
+                    margin: 0 0 3px;
+                    width: 100px;
+                }
+                #left{
+                    float: left;
+                    width: 120px;
+                }
+                #center{
+                    margin:0 0px;
+                    float: left;
+                    margin-top:60px;
+                }
+                #btnSelect, #btnSelect2{
+                    margin:5px 0px;
+                }
+                #right{
+                    float: right;
+                    width: 120px;       
+                }
+                input{
+                    width: 40px;
+                    padding: 1px;
+                    margin: 3px;
+                }
+            </style>
+    </head>
+    <body>
+        <div id="mainArea">
+            <div id="left">
+                待选名单<br>
+                <select id="employee" size="10" tabindex="1">
+                    <option value="1">王伟</option>
+                    <option value="2">姚浪</option>
+                    <option value="3">柳倩</option>
+                    <option value="4">董珂</option>
+                </select>
+            </div>
+
+            <div id="center">
+                <div>
+                        <input type="button" id="btnSelect" value=">>" tabindex="2" onclick="onCopy('players','employee')">
+                </div>
+                
+                <div>
+                        <input type="button" id="btnSelect2" value="<<" tabindex="3" onclick="onCopy('employee','players')">
+                </div>
+            </div>
+
+            <div id="right">
+                参加名单<br>
+                <select id="players" size="10" tabindex="4">
+
+                </select>
+            </div>
+        </div>
+    </body>
+    <script>
+        function getSelectOption(id) {
+            var scrSelect = document.getElementById(id);
+            var selOpt = scrSelect.selectedIndex!=-1? scrSelect.options[scrSelect.selectedIndex]:null;
+            console.log(selOpt);
+            return selOpt;
+        }
+        function onCopy(id1,id2){
+            var rightSelect = document.getElementById(id1);
+            rightSelect.appendChild(this.getSelectOption(id2));
+        }
+    </script>
+</html>
